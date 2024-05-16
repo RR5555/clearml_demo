@@ -39,9 +39,7 @@ pipe.add_step(
     name="stage_data",
     base_task_project="Demo",
     base_task_name="step1_dataset_artifact",
-    parameter_override={"General/dataset_url": "${pipeline.url}"},
-    docker="ubuntu:jammy",
-    repo="https://github.com/RR5555/clearml_demo.git"
+    parameter_override={"General/dataset_url": "${pipeline.url}"}
 )
 
 pipe.add_step(
@@ -54,18 +52,14 @@ pipe.add_step(
         "General/test_size": 0.25,
     },
     pre_execute_callback=pre_execute_callback_example,
-    post_execute_callback=post_execute_callback_example,
-    docker="ubuntu:jammy",
-    repo="https://github.com/RR5555/clearml_demo.git"
+    post_execute_callback=post_execute_callback_example
 )
 pipe.add_step(
     name="stage_train",
     parents=["stage_process"],
     base_task_project="Demo",
     base_task_name="step3_train_model",
-    parameter_override={"General/dataset_task_id": "${stage_process.id}"},
-    docker="ubuntu:jammy",
-    repo="https://github.com/RR5555/clearml_demo.git"
+    parameter_override={"General/dataset_task_id": "${stage_process.id}"}
 )
 
 # for debugging purposes use local jobs
