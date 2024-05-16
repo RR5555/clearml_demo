@@ -77,6 +77,8 @@ if __name__ == '__main__':
         function_kwargs=dict(pickle_data_url='${pipeline.url}'),
         function_return=['data_frame'],
         cache_executed_step=True,
+        docker="ubuntu:jammy",
+        repo="https://github.com/RR5555/clearml_demo.git"
     )
     pipe.add_function_step(
         name='step_two',
@@ -85,6 +87,8 @@ if __name__ == '__main__':
         function_kwargs=dict(data_frame='${step_one.data_frame}'),
         function_return=['processed_data'],
         cache_executed_step=True,
+        docker="ubuntu:jammy",
+        repo="https://github.com/RR5555/clearml_demo.git"
     )
     pipe.add_function_step(
         name='step_three',
@@ -93,6 +97,8 @@ if __name__ == '__main__':
         function_kwargs=dict(data='${step_two.processed_data}'),
         function_return=['model'],
         cache_executed_step=True,
+        docker="ubuntu:jammy",
+        repo="https://github.com/RR5555/clearml_demo.git"
     )
 
     # For debugging purposes run on the pipeline on current machine
