@@ -58,7 +58,7 @@ if __name__ == '__main__':
         name='Pipeline from fcts demo',
         version='1.1',
         add_pipeline_tags=False,
-        docker="rr5555/dith:cuda12.0-agent",
+        docker="rr5555/ubuntu:jammy",
         repo="https://github.com/RR5555/clearml_demo.git",
         packages="./requirements.txt"
     )
