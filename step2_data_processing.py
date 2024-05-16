@@ -7,6 +7,9 @@ from sklearn.model_selection import train_test_split
 # from here on everything is logged automatically
 task = Task.init(project_name="Demo", task_name="step2_data_processing")
 
+task.set_base_docker(docker_image="ubuntu:jammy")
+task.set_repo(repo="https://github.com/RR5555/clearml_demo.git")
+
 # program arguments
 # Use either dataset_task_id to point to a tasks artifact or
 # use a direct url with dataset_url

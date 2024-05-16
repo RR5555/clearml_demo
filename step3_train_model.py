@@ -10,6 +10,9 @@ from clearml import Task
 # from here on everything is logged automatically
 task = Task.init(project_name="Demo", task_name="step3_train_model")
 
+task.set_base_docker(docker_image="ubuntu:jammy")
+task.set_repo(repo="https://github.com/RR5555/clearml_demo.git")
+
 # Arguments
 args = {
     'dataset_task_id': 'REPLACE_WITH_DATASET_TASK_ID',
