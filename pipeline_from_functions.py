@@ -58,6 +58,7 @@ if __name__ == '__main__':
         name='Pipeline from fcts demo',
         version='1.1',
         add_pipeline_tags=False,
+        docker="rr5555/dith:cuda12.0-agent"
     )
 
     # set the default execution queue to be used (per step we can override the execution)
