@@ -24,7 +24,7 @@ def post_execute_callback_example(a_pipeline, a_node):
 # Connecting ClearML with the current pipeline,
 # from here on everything is logged automatically
 pipe = PipelineController(
-    name="Pipeline from Task demo", project="Demo", version="0.0.1", add_pipeline_tags=False
+    name="Pipeline from Task demo", project="Demo", version="0.0.1", add_pipeline_tags=False, docker="ubuntu:jammy", repo="https://github.com/RR5555/clearml_demo.git"
 )
 
 pipe.add_parameter(
@@ -66,6 +66,6 @@ pipe.add_step(
 # pipe.start_locally()
 
 # Starting the pipeline (in the background)
-pipe.start()
+pipe.start(queue="gpu_dithering")
 
 print("done")

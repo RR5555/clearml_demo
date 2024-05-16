@@ -28,9 +28,9 @@ exp-from-public-repo: ## Launch an exp from a public repo on `gpu_dithering` que
 	clearml-task --project Demo --name clearml_test --script test.py --repo https://github.com/RR5555/clearml_demo.git --branch main --queue gpu_dithering --docker rr5555/dith:cuda12.0-agent
 
 create-tasks-for-pipeline: ## Create the tasks wo exec for pipeline demo
-	clearml-task --script step1_dataset_artifact.py --repo https://github.com/RR5555/clearml_demo.git --branch main --docker rr5555/dith:cuda12.0-agent
-	clearml-task --script step2_data_processing.py --repo https://github.com/RR5555/clearml_demo.git --branch main --docker rr5555/dith:cuda12.0-agent
-	clearml-task --script step3_train_model.py --repo https://github.com/RR5555/clearml_demo.git --branch main --docker rr5555/dith:cuda12.0-agent
+	python3 -m step1_dataset_artifact.py
+	python3 -m step2_data_processing.py
+	python3 -m step3_train_model.py
 
 pipeline-from-tasks: ## Run pipeline from tasks
 	python3 -m pipeline_from_tasks
