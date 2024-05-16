@@ -8,7 +8,7 @@ task.set_repo(repo="https://github.com/RR5555/clearml_demo.git")
 
 
 # only create the task, we will actually execute it later
-task.execute_remotely()
+task.execute_remotely(queue_name=None)
 
 # simulate local dataset, download one, so we have something local
 local_iris_pkl = StorageManager.get_local_copy(
