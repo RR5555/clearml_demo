@@ -9,6 +9,8 @@ task = Task.init(project_name="Demo", task_name="step3_train_model")
 
 task.set_base_docker(docker_image="ubuntu:jammy")
 task.set_repo(repo="https://github.com/RR5555/clearml_demo.git")
+task.set_packages(packages="./requirements.txt")
+
 
 # Arguments
 args = {

@@ -21,3 +21,27 @@ clearml-task --project examples --name no_execute --script keras_mnist.py --bran
 > [!WARNING]
 > Depending on the definition of the agents, you might have to precise at task level inside the pipeline and the pipeline steps, the corresponding `repo` and `docker`.
 
+> [!WARNING]
+> Create task with python will fail if an `import` fails before `execute_remotely(None)`
+
+
+```bash
+launch-env
+launch-agent
+exp-from-private-repo
+stop-agent
+launch-agents
+pipeline-from-functions
+pipeline-from-decorator
+
+create-tasks-for-pipeline
+pipeline-from-tasks
+
+stop-agents
+```
+
+
+
+
+
+
