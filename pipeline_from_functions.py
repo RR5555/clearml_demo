@@ -78,7 +78,8 @@ if __name__ == '__main__':
         function_return=['data_frame'],
         cache_executed_step=True,
         docker="ubuntu:jammy",
-        repo="https://github.com/RR5555/clearml_demo.git"
+        repo="https://github.com/RR5555/clearml_demo.git",
+        # execution_queue=""
     )
     pipe.add_function_step(
         name='step_two',

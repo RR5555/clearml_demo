@@ -8,7 +8,7 @@ from clearml import Task
 
 # Connecting ClearML with the current process,
 # from here on everything is logged automatically
-task = Task.init(project_name="Demo", task_name="step3_train_model")
+task = Task.init(project_name="Demo", task_name="step3_train_model",  docker="ubuntu:jammy", repo="https://github.com/RR5555/clearml_demo.git")
 
 # Arguments
 args = {

@@ -5,7 +5,7 @@ from clearml import TaskTypes
 # Make the following function an independent pipeline component step
 # notice all package imports inside the function will be automatically logged as
 # required packages for the pipeline execution step
-@PipelineDecorator.component(return_values=["data_frame"], cache=True, task_type=TaskTypes.data_processing)
+@PipelineDecorator.component(return_values=["data_frame"], cache=True, task_type=TaskTypes.data_processing, docker="ubuntu:jammy", repo="https://github.com/RR5555/clearml_demo.git")
 def step_one(pickle_data_url: str, extra: int = 43):
     print("step_one")
     # make sure we have scikit-learn for this step, we need it to use to unpickle the object
@@ -29,7 +29,7 @@ def step_one(pickle_data_url: str, extra: int = 43):
 # Specifying `return_values` makes sure the function step can return an object to the pipeline logic
 # In this case, the returned tuple will be stored as an artifact named "X_train, X_test, y_train, y_test"
 @PipelineDecorator.component(
-    return_values=["X_train", "X_test", "y_train", "y_test"], cache=True, task_type=TaskTypes.data_processing
+    return_values=["X_train", "X_test", "y_train", "y_test"], cache=True, task_type=TaskTypes.data_processing, docker="ubuntu:jammy", repo="https://github.com/RR5555/clearml_demo.git"
 )
 def step_two(data_frame, test_size=0.2, random_state=42):
     print("step_two")
@@ -49,7 +49,7 @@ def step_two(data_frame, test_size=0.2, random_state=42):
 # required packages for the pipeline execution step
 # Specifying `return_values` makes sure the function step can return an object to the pipeline logic
 # In this case, the returned object will be stored as an artifact named "model"
-@PipelineDecorator.component(return_values=["model"], cache=True, task_type=TaskTypes.training)
+@PipelineDecorator.component(return_values=["model"], cache=True, task_type=TaskTypes.training,  docker="ubuntu:jammy", repo="https://github.com/RR5555/clearml_demo.git")
 def step_three(X_train, y_train):
     print("step_three")
     # make sure we have pandas for this step, we need it to use the data_frame
@@ -66,7 +66,7 @@ def step_three(X_train, y_train):
 # required packages for the pipeline execution step
 # Specifying `return_values` makes sure the function step can return an object to the pipeline logic
 # In this case, the returned object will be stored as an artifact named "accuracy"
-@PipelineDecorator.component(return_values=["accuracy"], cache=True, task_type=TaskTypes.qc)
+@PipelineDecorator.component(return_values=["accuracy"], cache=True, task_type=TaskTypes.qc,  docker="ubuntu:jammy", repo="https://github.com/RR5555/clearml_demo.git")
 def step_four(model, X_data, Y_data):
     from sklearn.linear_model import LogisticRegression  # noqa
     from sklearn.metrics import accuracy_score
@@ -78,7 +78,7 @@ def step_four(model, X_data, Y_data):
 # The actual pipeline execution context
 # notice that all pipeline component function calls are actually executed remotely
 # Only when a return value is used, the pipeline logic will wait for the component execution to complete
-@PipelineDecorator.pipeline(name="custom pipeline logic (from decorator)", project="Demo", version="0.0.5")
+@PipelineDecorator.pipeline(name="custom pipeline logic (from decorator)", project="Demo", version="0.0.5",  docker="ubuntu:jammy", repo="https://github.com/RR5555/clearml_demo.git")
 def executing_pipeline(pickle_url, mock_parameter="mock"):
     print("pipeline args:", pickle_url, mock_parameter)
 

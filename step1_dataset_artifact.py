@@ -1,7 +1,7 @@
 from clearml import Task, StorageManager
 
 # create an dataset experiment
-task = Task.init(project_name="Demo", task_name="step1_dataset_artifact")
+task = Task.init(project_name="Demo", task_name="step1_dataset_artifact", docker="ubuntu:jammy", repo="https://github.com/RR5555/clearml_demo.git")
 
 # only create the task, we will actually execute it later
 task.execute_remotely()

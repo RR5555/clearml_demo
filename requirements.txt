@@ -1,3 +1,7 @@
 clearml
 scikit-learn
 pandas
+# from task
+joblib
+matplotlib
+numpy
