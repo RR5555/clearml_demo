@@ -59,7 +59,8 @@ if __name__ == '__main__':
         version='1.1',
         add_pipeline_tags=False,
         docker="ubuntu:jammy",
-        packages=["scikit-learn", "pandas"]
+        packages=["scikit-learn", "pandas"],
+        repo="https://github.com/RR5555/clearml_demo.git"
     )
 
     # set the default execution queue to be used (per step we can override the execution)
