@@ -25,9 +25,9 @@ exp-from-private-repo: ## Launch an exp from a private repo on `gpu_dithering` q
 	clearml-task --project Demo --name clearml_test --script clearml/test.py --repo https://github.com/RR5555/Classification_dither.git --branch main --queue gpu_dithering --docker rr5555/dith:cuda12.0-agent
 
 create-tasks-for-pipeline: ## Create the tasks wo exec for pipeline demo
-	clearml-task --project Demo --name step1_dataset_artifact --script step1_dataset_artifact.py --repo https://github.com/RR5555/clearml_demo.git --branch main --docker rr5555/dith:cuda12.0-agent
-	clearml-task --project Demo --name step2_data_processing --script step2_data_processing.py --repo https://github.com/RR5555/clearml_demo.git --branch main --docker rr5555/dith:cuda12.0-agent
-	clearml-task --project Demo --name step3_train_model --script step3_train_model.py --repo https://github.com/RR5555/clearml_demo.git --branch main --docker rr5555/dith:cuda12.0-agent
+	clearml-task --script step1_dataset_artifact.py --repo https://github.com/RR5555/clearml_demo.git --branch main --docker rr5555/dith:cuda12.0-agent
+	clearml-task --script step2_data_processing.py --repo https://github.com/RR5555/clearml_demo.git --branch main --docker rr5555/dith:cuda12.0-agent
+	clearml-task --script step3_train_model.py --repo https://github.com/RR5555/clearml_demo.git --branch main --docker rr5555/dith:cuda12.0-agent
 
 pipeline-from-tasks: ## Run pipeline from tasks
 	python3 -m pipeline_from_tasks
