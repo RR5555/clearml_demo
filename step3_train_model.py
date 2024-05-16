@@ -1,7 +1,4 @@
-import joblib
-import matplotlib.pyplot as plt
-import numpy as np
-from sklearn.linear_model import LogisticRegression
+
 
 from clearml import Task
 
@@ -21,6 +18,14 @@ task.connect(args)
 
 # only create the task, we will actually execute it later
 task.execute_remotely(queue_name=None)
+
+
+import joblib
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.linear_model import LogisticRegression
+
+
 
 print('Retrieving Iris dataset')
 dataset_task = Task.get_task(task_id=args['dataset_task_id'])
