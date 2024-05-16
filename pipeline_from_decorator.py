@@ -78,7 +78,7 @@ def step_four(model, X_data, Y_data):
 # The actual pipeline execution context
 # notice that all pipeline component function calls are actually executed remotely
 # Only when a return value is used, the pipeline logic will wait for the component execution to complete
-@PipelineDecorator.pipeline(name="custom pipeline logic (from decorator)", project="Demo", version="0.0.5",  docker="ubuntu:jammy", repo="https://github.com/RR5555/clearml_demo.git")
+@PipelineDecorator.pipeline(name="custom pipeline logic (from decorator)", project="Demo", version="0.0.5",  docker="ubuntu:jammy", repo="https://github.com/RR5555/clearml_demo.git", pipeline_execution_queue="gpu_dithering")
 def executing_pipeline(pickle_url, mock_parameter="mock"):
     print("pipeline args:", pickle_url, mock_parameter)
 
