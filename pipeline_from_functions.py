@@ -60,7 +60,7 @@ if __name__ == '__main__':
         add_pipeline_tags=False,
         docker="ubuntu:jammy",
         packages=["scikit-learn", "pandas"],
-        working_dir="/root"
+        working_dir="~/"
     )
 
     # set the default execution queue to be used (per step we can override the execution)
