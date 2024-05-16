@@ -1,6 +1,6 @@
 import pickle
 from clearml import Task, StorageManager
-from sklearn.model_selection import train_test_split
+
 
 
 # Connecting ClearML with the current process,
@@ -26,6 +26,9 @@ print('Arguments: {}'.format(args))
 
 # only create the task, we will actually execute it later
 task.execute_remotely(queue_name=None)
+
+from sklearn.model_selection import train_test_split
+
 
 # get dataset from task's artifact
 if args['dataset_task_id']:
