@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 
 # Connecting ClearML with the current process,
 # from here on everything is logged automatically
-task = Task.init(project_name="Demo", task_name="step2_data_processing",  docker="ubuntu:jammy", repo="https://github.com/RR5555/clearml_demo.git")
+task = Task.init(project_name="Demo", task_name="step2_data_processing")
 
 # program arguments
 # Use either dataset_task_id to point to a tasks artifact or
