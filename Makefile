@@ -8,7 +8,7 @@ launch-agent: ## Launch one agent on gpu 0 in queue `gpu_dithering`
 stop-agent: ## Stop the agent on gpu 0 in queue `gpu_dithering`
 	clearml-agent daemon --stop clearml-agent-bengio:gpu0
 
-launch-agent: ## Launch one agent per gpu (4 gpus) in queue `gpu_dithering`
+launch-agents: ## Launch one agent per gpu (4 gpus) in queue `gpu_dithering`
 	CLEARML_WORKER_NAME=clearml-agent-bengio CLEARML_WORKER_ID=clearml-agent-bengio:gpu0 clearml-agent daemon --detached --queue gpu_dithering --create-queue --gpus 0
 	CLEARML_WORKER_NAME=clearml-agent-bengio CLEARML_WORKER_ID=clearml-agent-bengio:gpu1 clearml-agent daemon --detached --queue gpu_dithering --create-queue --gpus 1
 	CLEARML_WORKER_NAME=clearml-agent-bengio CLEARML_WORKER_ID=clearml-agent-bengio:gpu2 clearml-agent daemon --detached --queue gpu_dithering --create-queue --gpus 2
