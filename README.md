@@ -37,18 +37,24 @@ https://clear.ml/docs/latest/docs/apps/clearml_task/#pushing-a-script-to-the-ser
 > ```
 
 ```bash
-launch-env
-launch-agent
-exp-from-private-repo
-stop-agent
-launch-agents
-pipeline-from-functions
-pipeline-from-decorator
+docker compose -p clearml-server down
+docker compose -f /opt/clearml/docker-compose.yml up -d
+```
 
-create-tasks-for-pipeline
-pipeline-from-tasks
 
-stop-agents
+```bash
+make launch-env
+make launch-agent
+make exp-from-private-repo
+make stop-agent
+make launch-agents
+make pipeline-from-functions
+make pipeline-from-decorator
+
+make create-tasks-for-pipeline
+make pipeline-from-tasks
+
+make stop-agents
 ```
 
 
