@@ -77,3 +77,13 @@ clearml-data close
 ```
 
 
+## Integrated
+
+```bash
+cd /root/code
+python integrated_test.py
+python integrated_test2.py
+python integrated_test2.py --docker
+python integrated_test2.py --repo
+python integrated_test2.py --docker --repo
+```
