@@ -86,6 +86,8 @@ python integrated_test2.py
 python integrated_test2.py --docker
 python integrated_test2.py --repo
 python integrated_test2.py --docker --repo
+python integrated_test2.py --docker --repo --force-reqs
+python integrated_test2.py --docker --repo --force-reqs --new-task
 ```
 
 
