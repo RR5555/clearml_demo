@@ -97,3 +97,10 @@ https://clear.ml/docs/latest/docs/webapp/webapp_exp_track_visual/#general-inform
 
 
 
+[Task.ignore_requirements](https://clear.ml/docs/latest/docs/references/sdk/task/#taskignore_requirements): ''Ignore a specific package when auto generating the requirements list. Example: Task.ignore_requirements(‘pywin32’)''
+
+
+[ClearML Agent CLI](https://clear.ml/docs/latest/docs/clearml_agent/clearml_agent_ref/#parameters):
+''`--install-globally`:	Install the required Python packages before creating the virtual environment. Use `agent.package_manager.system_site_packages` to control the installation of the system packages. When `--docker` is used, `--install-globally` is always true.''
+
+
