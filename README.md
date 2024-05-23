@@ -87,3 +87,11 @@ python integrated_test2.py --docker
 python integrated_test2.py --repo
 python integrated_test2.py --docker --repo
 ```
+
+
+https://clear.ml/docs/latest/docs/webapp/webapp_exp_track_visual#custom-parameter-groups
+
+https://clear.ml/docs/latest/docs/webapp/webapp_exp_track_visual/#general-information
+
+
+
