@@ -1,7 +1,7 @@
 from clearml import Task
 import argparse
 
-from .test import main
+from test import main
 
 
 def define_parser():

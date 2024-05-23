@@ -1,4 +1,4 @@
-from .test import main
+from test import main
 from clearml import Task
 
 
