@@ -79,6 +79,52 @@ clearml-data close
 
 ## Integrated
 
+
+Launch `clearml-test-integrated-exp_container-1`?
+
+docker compose -p clearml-agent down
+docker compose -p clearml-launcher down
+
+See repo `clearml-agent`: `clearml-agent/integrated`: `README`, `Makefile`
+
+
+* `integrated_test.py`:
+  * Desc.:\
+  	Create a task with:
+	|||
+	|:---|:---|
+	|Project|`Demo`|
+	|Task|`Integrated 1`|
+	The computational load is inside the file declaring the task. (The load register a scatter plot and scalars (i:i*2 for i in range(100)))
+  * Not found (`EXECUTION`):
+    * Repo
+    * Container
+    * Destination
+  * Hostname (`INFO`): `5df405395f17` (the `CONTAINER ID`)
+  * Description (`INFO`): ''Auto-generated at 2024-05-21 07:00:10 UTC by root@5df405395f17''
+* `integrated_test2.py`:
+  * Desc.:
+	Create a Task with:
+	|||
+	|:---|:---|
+	|Project|`Demo`|
+	|Task|`Integrated 2`|
+	With an argument parser:
+	||||
+	|:---|:---|:---|
+	|`repo`|bool|`task.set_repo(repo="https://github.com/RR5555/clearml_demo.git", branch="main", commit=None)`|
+	|`docker`|bool|`task.set_base_docker(docker_image="rr5555/clearml_test:integrated", docker_arguments=None, docker_setup_bash_script=None)`|
+	|`new_task`|bool|`reuse_last_task_id=False`|
+
+	`Task.force_requirements_env_freeze(force=True, requirements_file=None)`: Attempt to use local pkgs?
+
+	**Computational load**: imported from `test.py`; `main()`
+
+	`test.py`: `logging` and `SummaryWritter`:
+	* Check out how results are stored: are there duplicates? (log is captured, but log stdout or all streams?)
+
+
+
 ```bash
 cd /root/code
 python integrated_test.py
