@@ -3,7 +3,7 @@ from clearml import Task
 
 fetched_task = Task.get_task(project_name='Demo', task_name='Storage')
 print(fetched_task.artifacts['dummy_log'])
-fetched_task_list = Task.get_tasks(project_name='Demo', task_name='Storage')
+fetched_task_list = Task.get_tasks(project_name='Demo', task_name='Storage', filter={'status':'completed'})
 for _task in fetched_task_list:
     print(_task.artifacts['dummy_log'])
 
