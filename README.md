@@ -116,12 +116,52 @@ See repo `clearml-agent`: `clearml-agent/integrated`: `README`, `Makefile`
 	|`docker`|bool|`task.set_base_docker(docker_image="rr5555/clearml_test:integrated", docker_arguments=None, docker_setup_bash_script=None)`|
 	|`new_task`|bool|`reuse_last_task_id=False`|
 
-	`Task.force_requirements_env_freeze(force=True, requirements_file=None)`: Attempt to use local pkgs?
+	`Task.force_requirements_env_freeze(force=True, requirements_file=None)`:
+	TODO: Attempt to use local pkgs?
+
+	https://clear.ml/docs/latest/docs/configs/clearml_conf
+	''
+
+	`agent.package_manager.system_site_packages` (bool)
+
+    * Indicates whether Python packages for virtual environments are inherited from the system when building a virtual environment for an experiment.
+
+    	The values are:
+        * `true` - Inherit
+        * `false` - Do not inherit (load Python packages)
+	''
+
+	''
+	`sdk.development.default_output_uri` (string)
+
+    The default output destination for model checkpoints (snapshots) and artifacts. If the `output_uri` parameter is not provided when calling `Task.init()`, then use the destination in `default_output_uri`.
+
+	''
+
+	''
+	`sdk.development.worker.log_stdout` (bool)
+
+    * For development mode workers, indicates whether all stdout and stderr messages are logged.
+
+    	The values are:
+        * `true` - Log all
+        * `false` - Do not log all
+	''
+
+	''
+
+	`sdk.storage.direct_access.url` (string)
+
+    * Specify a list of direct access objects using glob patterns which matches sets of files using wildcards. Direct access objects are not downloaded or cached, and any download request will return a direct reference.
+
+	''
+
+
 
 	**Computational load**: imported from `test.py`; `main()`
 
-	`test.py`: `logging` and `SummaryWritter`:
-	* Check out how results are stored: are there duplicates? (log is captured, but log stdout or all streams?)
+	`test.py`: `logging` and `SummaryWritter`:\
+	TODO: Check out how results are stored: are there duplicates? (log is captured, but log stdout or all streams?)
 
 
 
@@ -150,3 +190,25 @@ https://clear.ml/docs/latest/docs/webapp/webapp_exp_track_visual/#general-inform
 ''`--install-globally`:	Install the required Python packages before creating the virtual environment. Use `agent.package_manager.system_site_packages` to control the installation of the system packages. When `--docker` is used, `--install-globally` is always true.''
 
 
+TODO: Look at `ClearML-Docs.md`\#`Re-use Artifcats`
+TODO: https://clear.ml/docs/latest/docs/model_registry#querying-models
+
+
+https://ibrahimhkoyuncu.medium.com/clearml-complete-guide-to-manage-datasets-and-create-pipeline-to-train-ml-model-ef06f93bca7b
+''
+```python
+task = Task.init(project_name=project_name, task_name="step_2")
+args = {
+    'dataset_name': '',
+    'random_state': 42,
+    'test_size': 0.2,
+}
+
+# store arguments, later we will be able to change them from outside the code
+task.connect(args)
+print('Arguments: {}'.format(args))
+
+# only create the task, we will actually execute it later
+task.execute_remotely()
+```
+''
