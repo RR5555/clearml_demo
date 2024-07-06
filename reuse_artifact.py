@@ -8,9 +8,10 @@ for _task in fetched_task_list:
     print(_task.artifacts['dummy_log'])
 
 print(fetched_task.artifacts['dummy_log'].url)
+print(fetched_task.artifacts['dummy_log'].url[7:])
 
 
-with open(fetched_task.artifacts['dummy_log'].url,'r') as _file:
+with open(fetched_task.artifacts['dummy_log'].url[7:],'r') as _file:
     print(_file.readlines())
 
 
