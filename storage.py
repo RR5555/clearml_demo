@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
 
 	if args.change_output_uri:
-		task.output_uri = '~/'
+		task.output_uri = '/root/clearml_results'
 
 	# add and upload local file artifact
 	task.upload_artifact(
