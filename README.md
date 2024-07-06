@@ -212,3 +212,12 @@ print('Arguments: {}'.format(args))
 task.execute_remotely()
 ```
 ''
+
+TODO: Preview for text artifacts
+
+
+https://www.google.com/search?client=ubuntu-sn&channel=fs&q=clearml+text+file+artifact+preview
+
+https://clear.ml/docs/latest/docs/guides/reporting/using_artifacts/
+
+https://github.com/allegroai/clearml/issues/333
