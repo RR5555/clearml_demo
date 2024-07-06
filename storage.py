@@ -28,6 +28,11 @@ if __name__ == "__main__":
 		name='dummy_log', 
 		artifact_object='a.log'
 		)
+	
+	task.upload_artifact(
+		name='dummy.log', 
+		artifact_object='a.log'
+		)
 
 
 # TODO: Add a re-use in both cases for output_uri

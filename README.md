@@ -221,3 +221,17 @@ https://www.google.com/search?client=ubuntu-sn&channel=fs&q=clearml+text+file+ar
 https://clear.ml/docs/latest/docs/guides/reporting/using_artifacts/
 
 https://github.com/allegroai/clearml/issues/333
+
+
+# Re-use artifacts
+
+```bash
+root@5df405395f17:~/code# python -m reuse_artifact
+{'name': 'dummy_log', 'size': 13, 'type': 'custom', 'mode': <ArtifactModeEnum.output: 'output'>, 'url': 'file:///root/results/Demo/Storage.a62c2407ebb54c9a89ef307b51dee753/artifacts/dummy_log/a.log', 'hash': '0ba904eae8773b70c75333db4de2f3ac45a8ad4ddba1b242f0b3cfc199391dd8', 'timestamp': datetime.datetime(2024, 7, 6, 9, 25, 37), 'metadata': {}, 'preview': 'a.log - 13 bytes\n'}
+{'name': 'dummy_log', 'size': 13, 'type': 'custom', 'mode': <ArtifactModeEnum.output: 'output'>, 'url': 'file:///root/results/Demo/Storage.a62c2407ebb54c9a89ef307b51dee753/artifacts/dummy_log/a.log', 'hash': '0ba904eae8773b70c75333db4de2f3ac45a8ad4ddba1b242f0b3cfc199391dd8', 'timestamp': datetime.datetime(2024, 7, 6, 9, 25, 37), 'metadata': {}, 'preview': 'a.log - 13 bytes\n'}
+file:///root/results/Demo/Storage.a62c2407ebb54c9a89ef307b51dee753/artifacts/dummy_log/a.log
+/root/results/Demo/Storage.a62c2407ebb54c9a89ef307b51dee753/artifacts/dummy_log/a.log
+['Hello world!\n']
+```
+
+
