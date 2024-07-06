@@ -33,6 +33,18 @@ if __name__ == "__main__":
 		name='dummy.log', 
 		artifact_object='a.log'
 		)
+	
+	task.upload_artifact(
+		name='dummy_ext_log', 
+		artifact_object='a.log',
+		extension_name='.log'
+		)
+	
+	task.upload_artifact(
+		name='dummy_ext_txt', 
+		artifact_object='a.log',
+		extension_name='.txt'
+		)
 
 
 # TODO: Add a re-use in both cases for output_uri
