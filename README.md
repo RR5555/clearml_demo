@@ -13,7 +13,7 @@ https://clear.ml/docs/latest/docs/apps/clearml_task/#pushing-a-script-to-the-ser
 
 
 > [!CAUTION]
-> I had to regenerate the PAT after extending it to this repo before the PAT could work again for the new one (or for both, will ahve to check again) 
+> I had to regenerate the PAT after extending it to this repo before the PAT could work again for the new one (or for both, will have to check again) 
 
 
 > [!CAUTION]
