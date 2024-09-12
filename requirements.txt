@@ -1,4 +1,5 @@
 clearml
+clearml-agent
 scikit-learn
 pandas
 # from task

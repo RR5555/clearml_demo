@@ -1,5 +1,8 @@
 .DEFAULT_GOAL := help
 
+install-env: ## Install pip pkgs for demo
+	pip install -r requirements.txt
+
 launch-env: ## Activate the clearml env (clearml, clearml-agent)
 
 launch-agent: ## Launch one agent on gpu 0 in queue `gpu_dithering`
