@@ -6,3 +6,5 @@ pandas
 joblib
 matplotlib
 numpy
+torch
+torchvision
