@@ -9,3 +9,6 @@ numpy
 torch
 torchvision
 tensorboard
+
+# for ipynb
+ipywidgets
