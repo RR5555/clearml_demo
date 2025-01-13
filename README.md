@@ -4,16 +4,12 @@
 
 
 
+
 https://clear.ml/docs/latest/docs/apps/clearml_task/#pushing-a-script-to-the-server:
 
 |||
 |:---|:---|
 |`--queue`|Select a task's execution queue. If not provided, a task is created but not launched|
-
-
-
-> [!CAUTION]
-> I had to regenerate the PAT after extending it to this repo before the PAT could work again for the new one (or for both, will have to check again) 
 
 
 > [!CAUTION]
